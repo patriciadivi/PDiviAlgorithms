@@ -9,4 +9,3 @@ def is_palindrome_iterative(word):
         palindrome = word[pos] == word[-pos-1]
         pos += 1
     return palindrome
- 

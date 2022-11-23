@@ -1,8 +1,8 @@
 def element_partition(list, initPos, endPos):
-    pivot = list[endPos]
+    resultPartition = list[endPos]
     index = initPos - 1
     for j in range(initPos, endPos):
-        if list[j] <= pivot:
+        if list[j] <= resultPartition:
             index += 1
             list[index], list[j] = list[j], list[index]
     list[index + 1], list[endPos] = list[endPos], list[index + 1]
@@ -11,9 +11,9 @@ def element_partition(list, initPos, endPos):
 
 def order_elements(array, initPos, endPos):
     if initPos < endPos:
-        pivot = element_partition(array, initPos, endPos)
-        order_elements(array, initPos, pivot - 1)
-        order_elements(array, pivot + 1, endPos)
+        resultPartition = element_partition(array, initPos, endPos)
+        order_elements(array, initPos, resultPartition - 1)
+        order_elements(array, resultPartition + 1, endPos)
     return array
 
 
